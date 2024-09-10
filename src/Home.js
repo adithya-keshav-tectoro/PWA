@@ -20,6 +20,7 @@ const Home = () => {
       <div className=" justify-content-center pt-2">
         <button onClick={navigateToBrowser}>Click here to navigate</button>
       </div>
+      <div>Params: {JSON.stringify(window.location.search)}</div>
     </div>
   );
 };
