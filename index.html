@@ -13,6 +13,13 @@
 
     <script type="text/babel">
       const Home = () => {
+        const [params, setParams] = React.useState([]);
+
+        React.useEffect(() => {
+          const searchParams = new URLSearchParams(window.location.search);
+          const paramsArray = Array.from(searchParams.entries());
+          setParams(paramsArray);
+        }, []);
         const navigateToBrowser = () => {
           var a = document.createElement("a");
           a.href =
@@ -37,7 +44,13 @@
                 Click here to navigate
               </button>
             </div>
-            <div>Params: {JSON.stringify(window.location.search)}</div>
+            <ul>
+              {params.map(([key, value]) => (
+                <li key={key}>
+                  <span>{key}:</span> {value}
+                </li>
+              ))}
+            </ul>
           </div>
         );
       };
