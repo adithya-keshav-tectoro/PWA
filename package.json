@@ -5,7 +5,7 @@
 	"main": "index.html",
 	"scripts": {
 		"start": "serve",
-		"build": "mkdir -p build && cp -R * build && rm -rf build/node_modules build/package.json build/package-lock.json"
+		"build": "mkdir -p build && cp index.html build/"
 	},
 	"dependencies": {
 		"serve": "^14.2.0"
