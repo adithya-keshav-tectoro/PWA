@@ -45,7 +45,9 @@
               </button>
             </div>
             <ul>
-              {params.map(([key, value]) => (
+              {Array.from(
+                new URLSearchParams(window.location.search).entries()
+              ).map(([key, value]) => (
                 <li key={key}>
                   <span>{key}:</span> {value}
                 </li>
