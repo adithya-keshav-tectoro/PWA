@@ -37,15 +37,7 @@
                 Click here to navigate
               </button>
             </div>
-            <ul>
-              {Array.from(
-                new URLSearchParams(window.location.search).entries()
-              ).map(([key, value]) => (
-                <li key={key}>
-                  <span>{key}:</span> {value}
-                </li>
-              ))}
-            </ul>
+            <div>Params: {JSON.stringify(window.location.search)}</div>
           </div>
         );
       };
